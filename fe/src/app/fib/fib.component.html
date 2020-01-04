@@ -1,0 +1,20 @@
+<div>
+  <form>
+    <label for="input">Enter your index
+    </label>
+    <input type="text"
+           id="input"
+           #input
+           (change)="onInputChange(input.value)">
+    <button (click)="onSubmit()">Submit</button>
+  </form>
+
+  <h3>Indexes I've already seen:</h3>
+  {{ seenIndexes }}
+
+  <h3>Calculated values:</h3>
+
+  <div *ngFor="let i of values">
+    {{ i }}
+  </div>
+</div>
