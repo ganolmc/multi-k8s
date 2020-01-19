@@ -25,10 +25,13 @@ after_success:
 deploy:
     edge: true
     provider: elasticbeanstalk
+    # the fastest way to take it from subdomain
     region: us-east-2
     app: multi-docker
+    # Taken from elasticbeanstalk
     env: MultiDocker-env
-    bucket_name: elasticbeanstalk-us-east-2-978828767084
+    # Bucket name is taken from s3 (bucket created for the same area)
+    bucket_name: elasticbeanstalk-us-east-2-978828767084 
     bucket_path: docker-multi
     on:
         branch: master
