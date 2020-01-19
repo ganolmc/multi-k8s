@@ -1,0 +1,39 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "fe",
+      "image": "mykhailohanol/multi-fe",
+      "hostname": "fe",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "mykhailohanol/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "mykhailohanol/multi-worker",
+      "hostname": "worker",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "mykhailohanol/multi-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [
+        "fe",
+        "server"
+      ]
+    }
+  ]
+}
