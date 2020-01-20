@@ -6,21 +6,36 @@
       "image": "mykhailohanol/multi-fe",
       "hostname": "fe",
       "essential": false,
-      "memory": 128
+      "memory": 128,
+      "command": [
+        "tail",
+        "-f",
+        "/bin/bash"
+      ]
     },
     {
       "name": "server",
       "image": "mykhailohanol/multi-server",
       "hostname": "api",
       "essential": false,
-      "memory": 128
+      "memory": 128,
+      "command": [
+        "tail",
+        "-f",
+        "/bin/bash"
+      ]
     },
     {
       "name": "worker",
       "image": "mykhailohanol/multi-worker",
       "hostname": "worker",
       "essential": false,
-      "memory": 128
+      "memory": 128,
+      "command": [
+        "tail",
+        "-f",
+        "/bin/bash"
+      ]
     },
     {
       "name": "nginx",
@@ -37,7 +52,12 @@
         "fe",
         "server"
       ],
-      "memory": 128
+      "memory": 128,
+      "command": [
+        "tail",
+        "-f",
+        "/bin/bash"
+      ]
     }
   ]
 }
