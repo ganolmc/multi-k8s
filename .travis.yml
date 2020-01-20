@@ -17,10 +17,10 @@ after_success:
     # Login into Docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take those images and push them to Docker Hub
-    - docker push mykhailohanol/multi-fe 
-    - docker push mykhailohanol/multi-nginx 
-    - docker push mykhailohanol/multi-server 
-    - docker push mykhailohanol/multi-worker 
+    - docker push mykhailohanol/multi-fe:latest
+    - docker push mykhailohanol/multi-nginx:latest
+    - docker push mykhailohanol/multi-server:latest
+    - docker push mykhailohanol/multi-worker:latest
 
 deploy:
     edge: true
@@ -37,5 +37,3 @@ deploy:
         branch: master
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
-
-
