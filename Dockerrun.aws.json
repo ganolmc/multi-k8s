@@ -6,7 +6,7 @@
       "image": "mykhailohanol/multi-fe",
       "hostname": "fe",
       "essential": false,
-      "memory": 700
+      "memory": 128
     },
     {
       "name": "server",
