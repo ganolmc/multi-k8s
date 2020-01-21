@@ -4,7 +4,7 @@
     {
       "name": "fe",
       "image": "mykhailohanol/multi-fe",
-      "hostname": "fe",
+      "hostname": "client",
       "essential": false,
       "memory": 128
     },
