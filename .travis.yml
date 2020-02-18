@@ -7,3 +7,11 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
+  - gcloud config set project multi-k8s-267818
+  - gcloud config set compute/zone europe-west2-a
+  - gcloud container clusters get-credentials multi-cluster
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t mykhailohanol/ng-test -f ./fe/Dockerfile.dev ./fe
+
+script: 
+  - docker run -e CI=true mykhailohanol/ng-test npm test
